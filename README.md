@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍕 Pizza Online - Next.js + Prisma App
 
-## Getting Started
+## 👋 Welcome
 
-First, run the development server:
+Hi! I'm **Brandon Alan Carabajal**, and this is a sample project built with **Next.js**, **Prisma ORM**, **MySQL**, and **Tailwind CSS**. It demonstrates a full-stack web application with:
+
+- 🧾 **JWT Authentication**
+- 👨‍🍳 Role-based access (Admin & Client)
+- 🧑‍💼 Admin dashboard
+- 🛍️ Client storefront (pizza browsing, ordering, etc.)
+- 💾 Secure backend using server actions & database validation
+
+---
+
+## 🛠️ Stack Used
+
+- **Framework**: [Next.js (App Router)](https://nextjs.org)
+- **Database ORM**: [Prisma](https://www.prisma.io/)
+- **Database**: MySQL
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Authentication**: JWT + HTTPOnly Secure Cookies
+
+---
+
+## 🚀 Getting Started
+
+Clone repo:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/BrandonAlanDev/BAD-Pizzas-Online-Frontend.git
+cd BAD-Pizzas-Online-Frontend
+```
+Install dependencies:
+```bash
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create your .env file and add your database connection:
+DATABASE_URL="mysql://user:password@localhost:3306/pizzadb"
+JWT_SECRET="yoursecretkey"
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run database migrations and generate Prisma client:
+```bash
+npx prisma migrate dev --name init
+npx prisma generate
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start the development server:
+```bash
+npm run dev
+```
+Open http://localhost:3000 to see the app.
