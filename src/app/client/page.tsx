@@ -23,12 +23,6 @@ export default function ClientPage() {
             window.alert('hiciste click')
             }}>  
           </Boton>
-          <Boton text='Añadir al carrito'
-            primary={true} 
-            onClick={() => {
-            window.alert('hiciste click')
-            }}>  
-          </Boton>
           </>}
           
           onClick={()=>{}}/>

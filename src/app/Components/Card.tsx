@@ -15,10 +15,10 @@ export default function Card({ icon, primary, text, botones, onClick}: CardProps
     : "rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto text-black";
 
   return (
-    <div className='flex flex-col items-center justify-around' onClick={onClick}>
-        {icon && <div className="inline-flex select-none">{icon}</div>}
+    <div className='flex flex-col items-center justify-around border-2 p-2 w-[275px] rounded-2xl gap-5' onClick={onClick}>
+        {icon && <div className="flex select-none">{icon}</div>}
         <p className='select-none'>{text}</p>
-        {botones && <div className="inline-flex">{botones}</div>}
+        {botones && <div className="flex flex-row flex-wrap gap-3 items-end justify-end w-full">{botones}</div>}
     </div>
   );
 }
