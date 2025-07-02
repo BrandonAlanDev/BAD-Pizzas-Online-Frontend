@@ -15,7 +15,7 @@ export default function Boton({ icon, primary, text, onClick }: BotonProps) {
 
   return (
     <button className={clase} onClick={onClick}>
-      <span className="flex items-center gap-2">
+      <span className="flex items-center gap-2 select-none">
         {icon && <span className="inline-flex">{icon}</span>}
         {text}
       </span>
