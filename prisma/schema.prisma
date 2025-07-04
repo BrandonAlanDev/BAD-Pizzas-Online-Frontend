@@ -4,6 +4,8 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// Copy and paste : (npx prisma migrate dev --name init) to create tables in your local or hosting db
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -20,3 +22,21 @@ model User {
   isAdmin  Boolean  @default(false)
   createdAt DateTime @default(now())
 }
+
+model Categoria {
+  id       Int      @id @default(autoincrement())
+  nombreCategoria String   @unique
+  active  Boolean  @default(true)
+  items            Item[]  @relation("CategoriaToItems")
+}
+
+model Item {
+  id            Int       @id @default(autoincrement())
+  nombreItem    String    @unique
+  description   String
+  price         Float     @default(0)
+  active        Boolean   @default(true)
+  idCategoria   Int
+  categoria     Categoria @relation("CategoriaToItems", fields: [idCategoria], references: [id])
+}
+
