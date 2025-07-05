@@ -24,7 +24,7 @@ export default function Boton({ admin,user}: NavbarProps) {
         console.log("Salir");
     }
     return (
-        <div className='w-full h-[70px] border-b-2 align-middle items-center px-2'>
+        <div className='w-full h-[70px] border-b-4 align-middle items-center px-2'>
             <div className='flex w-full h-full flex-row justify-between align-middle items-center'>
                 <div className='gap-4 flex flex-row align-middle items-center'>
                     {admin?
